@@ -8,7 +8,7 @@ import { Mail, Phone, Download, CheckCircle2, Menu, X } from 'lucide-react';
 
 const App: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [lang, setLang] = useState<Language>('en');
+  const [lang, setLang] = useState<Language>('ar');
   const [isImageLoaded, setIsImageLoaded] = useState(false);
 
   const t = UI_STRINGS[lang];
@@ -163,7 +163,7 @@ const App: React.FC = () => {
             <h1 className="text-5xl md:text-8xl lg:text-[7rem] font-black mb-10 leading-[1.1] tracking-tighter">
               {t.iam} <span className="bg-gradient-to-r rtl:bg-gradient-to-l from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">{currentName}</span>
             </h1>
-            <p className="text-xl md:text-3xl text-slate-400 mb-14 max-w-4xl mx-auto leading-relaxed font-medium opacity-90">
+            <p className="text-xl md:text-3xl text-slate-200 mb-14 max-w-4xl mx-auto leading-relaxed font-medium opacity-95">
               {t.heroDesc}
             </p>
             <div className="flex flex-wrap justify-center gap-6">
@@ -245,31 +245,31 @@ const App: React.FC = () => {
         <div className="max-w-6xl mx-auto rounded-[3rem] md:rounded-[4rem] glass p-10 md:p-20 relative overflow-hidden">
           <div className="absolute top-0 right-0 w-96 h-96 bg-indigo-600/10 rounded-full blur-[120px]"></div>
           
-          <div className="flex flex-col lg:flex-row gap-16 md:gap-20 relative z-10">
+          <div className="flex flex-col lg:flex-row gap-12 md:gap-20 relative z-10">
             <div className="lg:w-1/2">
-              <h2 className="text-lg sm:text-2xl md:text-5xl font-black mb-8 leading-tight">
+              <h2 className="text-lg sm:text-2xl md:text-5xl font-black mb-8 leading-tight text-white">
                 {t.letsConnect}
               </h2>
-              <p className="text-slate-400 text-[11px] sm:text-sm md:text-2xl mb-14 leading-relaxed opacity-80">{t.connectDesc}</p>
+              <p className="text-slate-200 text-xs sm:text-sm md:text-2xl mb-14 leading-relaxed opacity-90">{t.connectDesc}</p>
               
               <div className="space-y-6 md:space-y-8">
-                <a href={`mailto:${CONTACT_INFO.email}`} className="flex items-center gap-6 md:gap-8 p-6 md:p-8 rounded-3xl glass hover:border-indigo-500/50 transition-all group overflow-hidden">
-                  <div className="shrink-0 w-14 h-14 md:w-16 md:h-16 bg-indigo-500/10 rounded-2xl flex items-center justify-center group-hover:bg-indigo-600 transition-colors">
+                <a href={`mailto:${CONTACT_INFO.email}`} className="flex items-center gap-4 md:gap-8 p-5 md:p-8 rounded-3xl glass hover:border-indigo-500/50 transition-all group overflow-hidden">
+                  <div className="shrink-0 w-12 h-12 md:w-16 md:h-16 bg-indigo-500/10 rounded-2xl flex items-center justify-center group-hover:bg-indigo-600 transition-colors">
                     <Mail className="text-indigo-400 group-hover:text-white" size={24} />
                   </div>
                   <div className="min-w-0">
-                    <h4 className="text-[10px] md:text-xs font-black text-slate-500 uppercase tracking-[0.2em] mb-1 md:mb-2">{t.formEmail}</h4>
-                    <p className="text-[6.5px] sm:text-[9.5px] md:text-lg font-black break-all">{CONTACT_INFO.email}</p>
+                    <h4 className="text-[10px] md:text-xs font-black text-slate-400 uppercase tracking-[0.2em] mb-1 md:mb-2">{t.formEmail}</h4>
+                    <p className="text-xs sm:text-sm md:text-lg font-black break-all text-white">{CONTACT_INFO.email}</p>
                   </div>
                 </a>
                 
-                <a href={`tel:${CONTACT_INFO.phone}`} className="flex items-center gap-6 md:gap-8 p-6 md:p-8 rounded-3xl glass hover:border-indigo-500/50 transition-all group overflow-hidden">
-                  <div className="shrink-0 w-14 h-14 md:w-16 md:h-16 bg-indigo-500/10 rounded-2xl flex items-center justify-center group-hover:bg-indigo-600 transition-colors">
+                <a href={`tel:${CONTACT_INFO.phone}`} className="flex items-center gap-4 md:gap-8 p-5 md:p-8 rounded-3xl glass hover:border-indigo-500/50 transition-all group overflow-hidden">
+                  <div className="shrink-0 w-12 h-12 md:w-16 md:h-16 bg-indigo-500/10 rounded-2xl flex items-center justify-center group-hover:bg-indigo-600 transition-colors">
                     <Phone className="text-indigo-400 group-hover:text-white" size={24} />
                   </div>
                   <div className="min-w-0">
-                    <h4 className="text-[10px] md:text-xs font-black text-slate-500 uppercase tracking-[0.2em] mb-1 md:mb-2">{t.phone}</h4>
-                    <p className="text-lg sm:text-xl md:text-3xl lg:text-4xl font-black text-white transition-colors">{CONTACT_INFO.phone}</p>
+                    <h4 className="text-[10px] md:text-xs font-black text-slate-400 uppercase tracking-[0.2em] mb-1 md:mb-2">{t.phone}</h4>
+                    <p className="text-base sm:text-xl md:text-2xl lg:text-2xl xl:text-3xl font-black text-white group-hover:text-indigo-300 transition-colors whitespace-nowrap">{CONTACT_INFO.phone}</p>
                   </div>
                 </a>
               </div>
@@ -279,15 +279,15 @@ const App: React.FC = () => {
               <form className="space-y-6 md:space-y-8" onSubmit={(e) => e.preventDefault()}>
                 <div>
                   <label className="block text-[10px] md:text-xs font-black text-slate-400 mb-2 md:mb-3 uppercase tracking-[0.2em]">{t.formName}</label>
-                  <input type="text" className="w-full bg-slate-950 border border-white/10 rounded-2xl px-5 md:px-6 py-4 md:py-5 focus:outline-none focus:border-indigo-500 text-slate-100 text-[8.5px] sm:text-sm md:text-lg placeholder:text-[9px]" placeholder={t.placeholderName} />
+                  <input type="text" className="w-full bg-slate-950 border border-white/10 rounded-2xl px-5 md:px-6 py-4 md:py-5 focus:outline-none focus:border-indigo-500 text-white text-sm md:text-lg placeholder:text-slate-600" placeholder={t.placeholderName} />
                 </div>
                 <div>
                   <label className="block text-[10px] md:text-xs font-black text-slate-400 mb-2 md:mb-3 uppercase tracking-[0.2em]">{t.formEmail}</label>
-                  <input type="email" className="w-full bg-slate-950 border border-white/10 rounded-2xl px-5 md:px-6 py-4 md:py-5 focus:outline-none focus:border-indigo-500 text-slate-100 text-[8.5px] sm:text-sm md:text-lg placeholder:text-[9px]" placeholder={t.placeholderEmail} />
+                  <input type="email" className="w-full bg-slate-950 border border-white/10 rounded-2xl px-5 md:px-6 py-4 md:py-5 focus:outline-none focus:border-indigo-500 text-white text-sm md:text-lg placeholder:text-slate-600" placeholder={t.placeholderEmail} />
                 </div>
                 <div>
                   <label className="block text-[10px] md:text-xs font-black text-slate-400 mb-2 md:mb-3 uppercase tracking-[0.2em]">{t.formMessage}</label>
-                  <textarea rows={4} className="w-full bg-slate-950 border border-white/10 rounded-2xl px-5 md:px-6 py-4 md:py-5 focus:outline-none focus:border-indigo-500 text-slate-100 text-[8.5px] sm:text-sm md:text-lg placeholder:text-[9px]" placeholder={t.placeholderMessage}></textarea>
+                  <textarea rows={4} className="w-full bg-slate-950 border border-white/10 rounded-2xl px-5 md:px-6 py-4 md:py-5 focus:outline-none focus:border-indigo-500 text-white text-sm md:text-lg placeholder:text-slate-600" placeholder={t.placeholderMessage}></textarea>
                 </div>
                 <button className="w-full py-4 md:py-7 bg-indigo-600 hover:bg-indigo-500 rounded-2xl font-black transition-all active:scale-95 text-[11px] sm:text-sm md:text-xl uppercase tracking-[0.2em] shadow-2xl shadow-indigo-600/30">
                   {t.formSubmit}
@@ -300,7 +300,7 @@ const App: React.FC = () => {
 
       <footer className="py-16 border-t border-white/5">
         <div className="container mx-auto px-6 flex flex-col items-center justify-center text-center">
-          <p className="text-sm md:text-base text-slate-500 font-bold tracking-wide">
+          <p className="text-sm md:text-base text-slate-200 font-bold tracking-wide">
             © 2026 {currentName}. {t.rights}
           </p>
         </div>
