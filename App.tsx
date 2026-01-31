@@ -270,7 +270,7 @@ const App: React.FC = () => {
                   </div>
                   <div className="min-w-0">
                     <h4 className="text-[10px] md:text-xs font-black text-slate-500 uppercase tracking-[0.2em] mb-1 md:mb-2">{t.phone}</h4>
-                    <p className="text-2xl sm:text-3xl md:text-5xl font-black">{CONTACT_INFO.phone}</p>
+                    <p className="text-base sm:text-3xl md:text-5xl lg:text-6xl font-black text-indigo-400 group-hover:text-indigo-300 transition-colors">{CONTACT_INFO.phone}</p>
                   </div>
                 </a>
               </div>

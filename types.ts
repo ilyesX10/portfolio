@@ -1,12 +1,6 @@
 
 export type Language = 'en' | 'fr' | 'ar';
 
-// Define the Message interface for the AI chat component
-export interface Message {
-  role: 'user' | 'assistant';
-  content: string;
-}
-
 export interface EducationItem {
   id: string;
   year: string;
